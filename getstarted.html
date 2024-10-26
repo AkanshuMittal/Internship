@@ -1,0 +1,2293 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BookAI: AI-Powered Book Generator | Create Unique Books in Minutes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">   
+        <script src="https://app.10xlaunch.ai/widget" data-app-id="da26cd2c-789c-46b1-8c08-d309c89986ea" async="" defer="">
+      </script>
+        <meta name="description" content="Revolutionize your writing with BookAI, the cutting-edge AI book generator. Create professional-quality, unique content for any genre in minutes. Perfect for authors, marketers, and content creators. Experience the future of writing today!">
+        <meta name="keywords" content="BookAI, AI book generator, TryBookAI, automated book creation, AI writing assistant, content generation, artificial intelligence writing, novel writing software, ebook creator, self-publishing tool, fast book writing, instant book generator">
+        <meta property="og:title" content="BookAI: AI-Powered Book Generator | Create Unique Books in Minutes">
+        <meta property="og:description" content="Unleash your creativity with BookAI. Our state-of-the-art AI technology transforms your ideas into full-length books, creating engaging, unique content in minutes. Perfect for authors, marketers, and content creators. Try BookAI now and revolutionize your writing process!">
+        <meta property="og:image" content="https://trybookai.com/images/bookai-og-image.jpg">
+        <meta property="og:url" content="https://trybookai.com">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="TryBookAI">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@TryBookAI">
+        <meta name="twitter:title" content="BookAI: AI-Powered Book Generator | Create Unique Books in Minutes">
+        <meta name="twitter:description" content="Generate professional-quality books in minutes with BookAI. Our AI-powered platform creates unique, engaging content for any genre. Start your literary journey today!">
+        <meta name="twitter:image" content="https://trybookai.com/images/bookai-twitter-card.jpg">
+        <link rel="canonical" href="https://trybookai.com">
+        <link rel="icon" type="image/png" href="https://trybookai.com/favicon.png">
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+        <meta name="author" content="TryBookAI Team">
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "BookAI",
+          "applicationCategory": "WritingSoftware",
+          "operatingSystem": "Web",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "description": "AI-powered book generator for creating unique, high-quality content instantly.",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "1024"
+          },
+          "featureList": [
+            "AI-powered content generation",
+            "Multiple genres supported",
+            "Customizable output",
+            "Fast book creation",
+            "SEO-optimized content",
+            "Plagiarism-free writing"
+          ],
+          "screenshot": "https://trybookai.com/images/bookai-screenshot.jpg",
+          "softwareVersion": "2.0",
+          "releaseNotes": "https://trybookai.com/release-notes"
+        }
+        </script>
+        <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE">
+        <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE">
+        <link rel="alternate" hreflang="x-default" href="https://trybookai.com">
+        <link rel="alternate" hreflang="en" href="https://trybookai.com/en">
+        <link rel="alternate" hreflang="es" href="https://trybookai.com/es">
+        <link rel="alternate" hreflang="fr" href="https://trybookai.com/fr">
+        <meta name="geo.region" content="US">
+        <meta name="geo.placename" content="San Francisco">
+        <meta name="geo.position" content="37.7749;-122.4194">
+        <meta name="ICBM" content="37.7749, -122.4194">
+        <meta name="revisit-after" content="7 days">
+        <meta name="apple-mobile-web-app-title" content="BookAI">
+        <meta name="application-name" content="BookAI">
+        <meta name="msapplication-TileColor" content="#6366f1">
+        <meta name="theme-color" content="#6366f1">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://trybookai.com/apple-touch-icon.png">
+        <link rel="manifest" href="https://trybookai.com/site.webmanifest">
+        <meta name="format-detection" content="telephone=no">
+        <meta property="article:publisher" content="https://www.facebook.com/TryBookAI">
+        <meta property="article:modified_time" content="2023-05-11T12:00:00+00:00">
+        <meta name="language" content="English">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin="">
+        <link rel="preconnect" href="https://checkout.razorpay.com" crossorigin="">
+        <link rel="preconnect" href="https://www.gstatic.com" crossorigin="">
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
+        <meta name="copyright" content="TryBookAI">
+        <meta name="rating" content="general">
+        <meta name="referrer" content="no-referrer-when-downgrade">
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+        <meta property="og:locale" content="en_US">
+        <meta name="twitter:creator" content="@TryBookAI">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
+        <link rel="dns-prefetch" href="//checkout.razorpay.com">
+        <link rel="dns-prefetch" href="//www.gstatic.com">
+        <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+        <meta name="google" content="nositelinkssearchbox">
+        <meta name="google" content="notranslate">
+        <link rel="stylesheet" href="https://trybookai.com/css/main.min.css">
+       
+        </head>
+   <body class="font-sans container text-gray-800 min-h-screen flex flex-col gradient-bg">
+          <div id="alert-container"></div>
+    
+        <main class="flex flex-col lg:flex-row h-screen p-4 lg:p-8 gap-4">
+          <div class="w-full lg:w-80 bg-white shadow-2xl p-6 lg:p-8 flex flex-col rounded-3xl transition-all duration-300 hover:shadow-3xl mobile-full-width glass-effect">
+            <div class="flex justify-between items-center">
+                <a href="http://trybookai.com">
+              <img src="https://raw.githubusercontent.com/adarshagupta/trybookai/main/logo.png" alt="BookAI Logo" class="w-12 h-10">
+            </a>
+    
+              <button id="settings-button" class="text-gray-600 hover:text-gray-800" style="margin-right: 1px" fdprocessedid="d5bt6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </button>
+              <button id="profile-button" class="text-gray-600 hover:text-gray-800" style="margin-right: 1px" fdprocessedid="oxuxs"><i class="fas fa-user"></i></button>
+            </div>
+            <form id="book-form" class="space-y-4 lg:space-y-6 flex-grow">
+              <div class="transition-all duration-300 hover:transform hover:scale-105 hidden">
+                <label for="api" class="block mb-2 text-sm font-medium text-gray-700">API</label>
+                <select id="api" name="api" required="" class="w-full p-3 text-sm text-gray-700 bg-gray-50 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
+                  <option value="together">BookAI LLM (Fastest)</option>
+                  <option value="openai">OpenAI</option>
+                </select>
+              </div>
+    
+              <div class="transition-all duration-300 hover:transform hover:scale-105">
+                <label for="model" class="block mb-2 text-sm font-medium text-gray-700">Model</label>
+                <select id="model" name="model" required="" class="w-full p-3 text-sm text-gray-700 bg-gray-50 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300" fdprocessedid="m0tlim">
+    
+                  <optgroup label="BookAI Models" id="together-models">
+                    <option value="deepseek-ai/deepseek-llm-67b-chat">
+                      BookAI 8 Billion Parameter
+                    </option>
+                    <option value="meta-llama/Llama-3.2-90B-Vision-Instruct-Turbo">
+                      BookAI 70 Billion Parameter
+                    </option>
+                    <option value="meta-llama/Llama-3.2-11B-Vision-Instruct-Turbo">
+                      BookAI 10 Billion Parameter
+                    </option>                
+                  </optgroup>
+                </select>
+              </div>
+    
+              <div class="transition-all duration-300 hover:transform hover:scale-105">
+                <label for="language" class="block mb-2 text-sm font-medium text-gray-700">Language</label>
+                <select id="language" name="language" required="" class="w-full p-3 text-sm text-gray-700 bg-gray-50 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300" fdprocessedid="a93ua">
+                  <option value="english">English</option>
+                  <option value="hindi">Hindi (Experimental)</option>
+                  <option value="spanish">Spanish</option>
+                </select>
+              </div>
+    
+              <div class="transition-all duration-300 hover:transform hover:scale-105">
+                <label for="genre" class="block mb-2 text-sm font-medium text-gray-700">Genre</label>
+                <select id="genre" name="genre" required="" class="w-full p-3 text-sm text-gray-700 bg-gray-50 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300" fdprocessedid="3xauus">
+                  <option value="fiction">Fiction</option>
+                  <option value="non-fiction">Non-Fiction</option>
+                  <option value="sci-fi">Science Fiction</option>
+                  <option value="fantasy">Fantasy</option>
+                  <option value="mystery">Mystery</option>
+                  <option value="romance">Romance</option>
+                  <option value="thriller">Thriller</option>
+                  <option value="horror">Horror</option>
+                  <option value="historical">Historical</option>
+                  <option value="biography">Biography</option>
+                </select>
+              </div>
+    
+              <div class="transition-all duration-300 hover:transform hover:scale-105">
+                <label for="topic" class="block mb-2 text-sm font-medium text-gray-700">Book Topic</label>
+                <input type="text" id="topic" name="topic" required="" class="w-full p-3 text-sm text-gray-700 bg-gray-50 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300" placeholder="Enter your book topic..." fdprocessedid="xis8ao">
+              </div>
+    
+              <div class="transition-all duration-300 hover:transform hover:scale-105">
+                <label for="word_count" class="block mb-2 text-sm font-medium text-gray-700">Target Word Count</label>
+                <input type="number" id="word_count" name="word_count" value="10" required="" class="w-full p-3 text-sm text-gray-700 bg-gray-50 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300" fdprocessedid="50epsk">
+              </div>
+    
+              <button type="submit" id="generate-book" class="w-full bg-gradient-to-r from-[#726bff] to-[#57b6fe] text-white py-3 rounded-xl hover:bg-gradient-to-r from-[#726bff] to-[#57b6fe]-700 transition-all duration-300 font-medium transform hover:scale-105 hover:shadow-lg hidden">
+                Generate Book
+              </button>
+              <button id="open-image-gen-modal" class="w-full bg-gradient-to-r from-[#726bff] to-[#57b6fe]
+              text-white py-3 rounded-xl hover:bg-gradient-to-r from-[#726bff] to-[#57b6fe]-700 transition-all duration-300 font-medium transform hover:scale-105 hover:shadow-lg" fdprocessedid="sb9ha8">
+                Generate Book &amp; Cover
+            </button>
+            </form>
+    
+            <div id="progress" class="mt-4 lg:mt-6 text-gray-600 text-center text-sm"></div>
+            <div id="error-message" class="mt-4 lg:mt-6 p-4 bg-red-100 text-red-700 rounded-xl text-center font-medium text-sm hidden"></div>
+          </div>
+          <div class="flex-1 flex flex-col bg-white rounded-3xl shadow-2xl transition-all duration-300 hover:shadow-3xl mobile-full-width glass-effect overflow-hidden">
+            <div class="flex-1 overflow-auto p-4 lg:p-8">
+              <div class="max-w-3xl mx-auto">
+                <div class="page-content space-y-6" style="font-size: 16px; text-align: left; line-height: 1.5; color: rgb(0, 0, 0);"></div>
+              </div>
+            </div>
+            <!-- Text-to-speech controls -->
+            <div class="p-4 border-t border-gray-200">
+              <div class="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
+                <button id="play-pause" class="w-full sm:w-auto bg-gradient-to-r from-[#726bff] to-[#57b6fe] text-white px-4 py-2 rounded-full hover:bg-gradient-to-r from-[#726bff] to-[#57b6fe] -700 transition-colors duration-300" fdprocessedid="ho4s0b">
+                  Play
+                </button>
+                <div class="flex items-center space-x-2">
+                  <button id="download-pdf" class="bg-gradient-to-r from-[#726bff] to-[#57b6fe] text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-600 transition transform hover:-translate-y-1 hidden">
+                    Download PDF
+                  </button><button id="view-saved-pdfs" class="fixed top-10 right-10 bg-gradient-to-r from-[#726bff] to-[#57b6fe]	 text-white px-5 py-3 rounded-full shadow-lg hover:bg-gradient-to-r from-[#726bff] to-[#57b6fe]	-600 transition transform hover:-translate-y-1" fdprocessedid="oiwk2">View Saved PDFs</button>
+                  <a id="edit-book" href="#" class="bg-gradient-to-r from-[#726bff] to-[#57b6fe] text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-600 transition transform hover:-translate-y-1 hidden">
+                    Edit Book
+                  </a>
+                </div>
+                <div class="flex items-center w-full sm:w-auto">
+                  <label for="voice-select" class="mr-2 text-sm">Voice:</label>
+                  <select id="voice-select" class="w-full sm:w-auto p-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent" fdprocessedid="p2dxrk"><option data-lang="en-US" data-name="Microsoft David - English (United States)">Microsoft David - English (United States) (en-US)</option><option data-lang="en-US" data-name="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) (en-US)</option><option data-lang="en-US" data-name="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) (en-US)</option><option data-lang="de-DE" data-name="Google Deutsch">Google Deutsch (de-DE)</option><option data-lang="en-US" data-name="Google US English">Google US English (en-US)</option><option data-lang="en-GB" data-name="Google UK English Female">Google UK English Female (en-GB)</option><option data-lang="en-GB" data-name="Google UK English Male">Google UK English Male (en-GB)</option><option data-lang="es-ES" data-name="Google español">Google español (es-ES)</option><option data-lang="es-US" data-name="Google español de Estados Unidos">Google español de Estados Unidos (es-US)</option><option data-lang="fr-FR" data-name="Google français">Google français (fr-FR)</option><option data-lang="hi-IN" data-name="Google हिन्दी">Google हिन्दी (hi-IN)</option><option data-lang="id-ID" data-name="Google Bahasa Indonesia">Google Bahasa Indonesia (id-ID)</option><option data-lang="it-IT" data-name="Google italiano">Google italiano (it-IT)</option><option data-lang="ja-JP" data-name="Google 日本語">Google 日本語 (ja-JP)</option><option data-lang="ko-KR" data-name="Google 한국의">Google 한국의 (ko-KR)</option><option data-lang="nl-NL" data-name="Google Nederlands">Google Nederlands (nl-NL)</option><option data-lang="pl-PL" data-name="Google polski">Google polski (pl-PL)</option><option data-lang="pt-BR" data-name="Google português do Brasil">Google português do Brasil (pt-BR)</option><option data-lang="ru-RU" data-name="Google русский">Google русский (ru-RU)</option><option data-lang="zh-CN" data-name="Google&nbsp;普通话（中国大陆）">Google&nbsp;普通话（中国大陆） (zh-CN)</option><option data-lang="zh-HK" data-name="Google&nbsp;粤語（香港）">Google&nbsp;粤語（香港） (zh-HK)</option><option data-lang="zh-TW" data-name="Google 國語（臺灣）">Google 國語（臺灣） (zh-TW)</option></select>
+                </div>
+              </div>
+            </div>
+            <!-- Analytics Dashboard -->
+            <div id="analytics-dashboard" class="p-4 rounded-lg shadow-xl w-full font-sans hidden">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div class="p-2 rounded-lg flex justify-between items-center">
+                  <h4 class="text-xs text-gray-400">Word Count</h4>
+                  <p id="word-count" class="text-xl font-bold"></p>
+                </div>
+                <div class="p-2 rounded-lg flex justify-between items-center">
+                  <h4 class="text-xs text-gray-400">Readability Score</h4>
+                  <p id="readability-score" class="text-xl font-bold"></p>
+                </div>
+                <div class="p-2 rounded-lg flex justify-between items-center">
+                  <h4 class="text-xs text-gray-400">Genre</h4>
+                  <p id="genre-classification" class="text-xl font-bold"></p>
+                </div>
+                <div class="p-2 rounded-lg flex justify-between items-center">
+                  <h4 class="text-xs text-gray-400">Sentiment</h4>
+                  <p id="sentiment-analysis" class="text-xl font-bold"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+    
+        <!-- Loading overlay -->
+        <div class="loading fixed inset-0 bg-gray-900 bg-opacity-50 backdrop-blur-sm flex flex-col justify-center items-center z-50 hidden transition-opacity duration-300">
+          <div class="text-center text-white bg-gray-800 p-6 rounded-2xl shadow-xl transform transition-all duration-300 hover:scale-105 mb-4">
+            <div class="inline-block w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin mb-4"></div>
+            <p class="text-lg font-semibold">Generating your book...</p>
+            <p class="text-xs mt-2 text-gray-300">
+              This may take a while based on the word count
+            </p>
+          </div>
+          <div id="game-container" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex justify-center items-center z-50 hidden">
+            <div class="bg-white p-6 rounded-lg shadow-xl">
+              <h3 class="text-xl font-bold mb-4">
+                While we generate your book, enjoy this game!
+              </h3>
+              <canvas id="gameCanvas" width="600" height="150" style="border: 1px solid #000000"></canvas>
+              <button id="restartGame" class="mt-4 bg-gradient-to-r from-[#726bff] to-[#57b6fe] text-white px-4 py-2 rounded-full hidden">
+                Restart Game
+              </button>
+              <p class="mt-2 text-sm text-gray-600">Press spacebar to jump</p>
+            </div>
+            <!-- Ad banner in loading screen -->
+          </div>
+        </div>
+    
+        <!-- Download buttons -->
+        <button id="download-audio" class="fixed bottom-5 left-2/2 transform -translate-x-1/2 bg-secondary text-white px-6 py-3 rounded-full shadow-lg hover:bg-green-600 transition transform hidden">
+          Download Audio Book (Coming soon)
+        </button>
+    
+        <!-- Settings Modal -->
+        <!-- Settings Modal -->
+        <div id="settings-modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50 hidden">
+          <div class="bg-white p-6 rounded-lg shadow-xl w-96 max-w-full mx-4 overflow-y-auto max-h-90vh">
+            <h2 class="text-2xl font-bold mb-4">Settings</h2>
+    
+            <!-- Existing settings -->
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-gray-700 mb-2">Theme</label>
+              <select id="theme-select" class="w-full p-2 border rounded">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+              </select>
+            </div>
+    
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-gray-700 mb-2">Font Size</label>
+              <input type="range" id="font-size-range" min="12" max="24" value="16" class="w-full">
+              <span id="font-size-value" class="text-sm text-gray-500">16px</span>
+            </div>
+    
+            <!-- New settings -->
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-gray-700 mb-2">Text Alignment</label>
+              <select id="text-align-select" class="w-full p-2 border rounded">
+                <option value="left">Left</option>
+                <option value="center">Center</option>
+                <option value="right">Right</option>
+                <option value="justify">Justify</option>
+              </select>
+            </div>
+    
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-gray-700 mb-2">Line Spacing</label>
+              <input type="range" id="line-spacing-range" min="1" max="3" step="0.1" value="1.5" class="w-full">
+              <span id="line-spacing-value" class="text-sm text-gray-500">1.5</span>
+            </div>
+    
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-gray-700 mb-2">Paragraph Indentation (em)</label>
+              <input type="range" id="indent-range" min="0" max="5" step="0.5" value="0" class="w-full">
+              <span id="indent-value" class="text-sm text-gray-500">0em</span>
+            </div>
+    
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-gray-700 mb-2">Text Color</label>
+              <input type="color" id="text-color-picker" value="#000000" class="w-full">
+            </div>
+    
+            <div class="mb-4">
+              <label class="flex items-center">
+                <input type="checkbox" id="analytics-toggle" class="mr-2">
+                <span class="text-sm font-medium text-gray-700">Enable Analytics Dashboard</span>
+              </label>
+            </div>
+    
+            <button id="close-settings" class="w-full bg-gradient-to-r from-[#726bff] to-[#57b6fe] text-white py-2 rounded hover:bg-gradient-to-r from-[#726bff] to-[#57b6fe] -700 transition-colors duration-300">
+              Close
+            </button>
+          </div>
+        </div>
+    
+        <div class="fixed bottom-4 left-0 right-0 flex justify-center space-x-4 px-4">
+          <button id="download-pdf" class="bg-secondary text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-600 transition transform hover:-translate-y-1 hidden">
+            Download &amp; Save
+          </button>
+          <button id="download-audio" class="bg-secondary text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-600 transition transform hidden">
+            Download Audio (Soon)
+          </button>
+        </div>
+        <div id="floating-chat-bubble" class="fixed bottom-5 right-5 w-14 h-14 bg-gradient-to-r from-[#726bff] to-[#57b6fe] rounded-full flex justify-center items-center cursor-pointer shadow-lg z-50 hover:bg-gradient-to-r from-[#726bff] to-[#57b6fe] -600 transition-colors duration-300">
+          <span class="text-3xl text-white">💬</span>
+        </div>
+    
+        <div id="chat-modal" class="hidden fixed bottom-24 right-5 w-80 h-96 bg-white rounded-lg shadow-xl z-50 flex flex-col overflow-hidden">
+          <div class="bg-gradient-to-r from-[#726bff] to-[#57b6fe] text-white p-4 flex justify-between items-center">
+            <h3 class="text-lg font-semibold">ChatGPT</h3>
+            <button id="close-chat" class="text-2xl font-bold hover:text-gray-200">
+              ×
+            </button>
+          </div>
+          <div id="chat-messages" class="flex-grow overflow-y-auto p-4"></div>
+          <div class="p-2 border-t border-gray-200">
+            <div class="flex">
+              <textarea id="chat-input" class="flex-grow border border-gray-300 rounded-l-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Type your message..."></textarea>
+              <button id="send-message" class="bg-gradient-to-r from-[#726bff] to-[#57b6fe] text-white px-4 rounded-r-md hover:bg-green-600 transition-colors duration-300">
+                Send
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="image-gen-modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50 hidden">
+            <div class="bg-white p-6 rounded-lg shadow-xl w-96 max-w-full mx-4">
+                <h2 class="text-2xl font-bold mb-4">Generate Image</h2>
+                <form id="image-gen-form">
+                    <div class="mb-4">
+                        <label for="image-prompt" class="block text-sm font-medium text-gray-700 mb-2">Image Prompt</label>
+                        <input type="text" id="image-prompt" name="prompt" required="" class="w-full p-2 border rounded" placeholder="Describe the image you want to generate...">
+                    </div>
+                    <div class="mb-4 hidden">
+                        <label for="num-outputs" class="block text-sm font-medium text-gray-700 mb-2">Number of Outputs</label>
+                        <input type="number" id="num-outputs" name="num_outputs" value="1" min="1" max="4" required="" class="w-full p-2 border rounded">
+                    </div>
+                    <div class="mb-4 hidden">
+                        <label for="aspect-ratio" class="block text-sm font-medium text-gray-700 mb-2">Aspect Ratio</label>
+                        <select id="aspect-ratio" name="aspect_ratio" required="" class="w-full p-2 border rounded">
+    
+                            <option value="4:5">Portrait (4:5)</option>
+                          
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="output-format" class="block text-sm font-medium text-gray-700 mb-2">Output Format</label>
+                        <select id="output-format" name="output_format" required="" class="w-full p-2 border rounded">
+                            <option value="png">PNG</option>
+                            <option value="jpg">JPG</option>
+                        </select>
+                    </div>
+                    <div class="mb-4 hidden">
+                        <label for="output-quality" class="block text-sm font-medium text-gray-700 mb-2">Output Quality</label>
+                        <input type="number" id="output-quality" name="output_quality" value="75" min="1" max="100" required="" class="w-full p-2 border rounded">
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-[#726bff] to-[#57b6fe] text-white py-2 rounded hover:bg-gradient-to-r from-[#726bff] to-[#57b6fe]-900 transition-colors duration-300">Generate Image</button>
+                </form>
+                <button id="close-image-gen-modal" class="mt-4 w-full bg-gray-300 text-gray-800 py-2 rounded hover:bg-gray-400 transition-colors duration-300">Close</button>
+            </div>
+        </div>
+    
+        <div id="generated-images" class="fixed top-5 right-5 w-64 bg-white p-4 rounded-lg shadow-lg hidden">
+            <div class="flex justify-between items-center mb-2">
+                <h3 class="text-lg font-semibold">Generated Images</h3>
+                <button id="close-generated-images" class="text-gray-500 hover:text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="image-container" class="space-y-2"></div>
+        </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+        $(document).ready(function () {
+            console.log('Script loaded');
+            var eventSource;
+            var razorpayOrderId;
+    
+            $("#book-form").submit(function (e) {
+                e.preventDefault();
+                const selectedModel = $("#model").val();
+                if (selectedModel === "gpt-4-turbo" || selectedModel === "gpt-4o") {
+                    initiatePayment();
+                } else {
+                    generateBook(); // Directly call generateBook instead of showAdWall
+                }
+            });
+    
+            function initiatePayment() {
+                $.ajax({
+                    url: "/create-razorpay-order",
+                    method: "POST",
+                    data: { amount: 2000 }, // $20 in cents
+                    success: function (response) {
+                        razorpayOrderId = response.id;
+                        var options = {
+                            key: "YOUR_RAZORPAY_KEY_ID", // Replace with your Razorpay Key ID
+                            amount: "2000",
+                            currency: "USD",
+                            name: "AI Book Generator",
+                            description: "GPT-4 Model Access",
+                            order_id: razorpayOrderId,
+                            handler: function (response) {
+                                // Payment successful, proceed with book generation
+                                generateBook(); // Directly call generateBook instead of showAdWall
+                            },
+                            prefill: {
+                                name: "User Name",
+                                email: "user@example.com",
+                            },
+                            theme: {
+                                color: "#3399cc",
+                            },
+                        };
+                        var rzp1 = new Razorpay(options);
+                        rzp1.open();
+                    },
+                    error: function (xhr, status, error) {
+                        $("#error-message")
+                            .text("An error occurred while initiating payment: " + error)
+                            .show();
+                    },
+                });
+            }
+    
+            // Function to check if user is logged in
+            function isUserLoggedIn() {
+                return new Promise((resolve) => {
+                    firebase.auth().onAuthStateChanged((user) => {
+                        resolve(!!user);
+                    });
+                });
+            }
+    
+            // Modified generateBook function
+            async function generateBook() {
+                // Check if user is logged in
+                const loggedIn = await isUserLoggedIn();
+                if (!loggedIn) {
+                    alert("Please log in to generate a book.");
+                    $("#profile-button").click(); // Open the login modal
+                    return;
+                }
+    
+                var formData = $("#book-form").serialize();
+                $("#progress").text("");
+                $(".page-content").empty();
+                $(".loading").show();
+                $("#download-pdf").hide();
+                $("#error-message").hide();
+                $("#analytics-dashboard").addClass("hidden");
+    
+                showGame(); // Show the game while generating
+    
+                if (eventSource) {
+                    eventSource.close();
+                }
+    
+                eventSource = new EventSource("/progress");
+                eventSource.onmessage = function (event) {
+                    if (event.data !== "keep-alive") {
+                        $("#progress").text("Words generated: " + event.data);
+                    }
+                };
+    
+                $.ajax({
+                    url: "/generate",
+                    method: "POST",
+                    data: formData,
+                    success: function (response) {
+                        $(".loading").hide();
+                        hideGame(); // Hide the game when generation is complete
+                        
+                        // Parse the HTML content
+                        var parser = new DOMParser();
+                        var doc = parser.parseFromString(response.content, 'text/html');
+                        
+                        // Create a container for the book content
+                        var bookContainer = $('<div>').addClass('book-content');
+                        
+                        // Process each chapter
+                        $(doc.body).children().each(function() {
+                            if (this.tagName === 'H2') {
+                                // Chapter title
+                                $('<h2>').text($(this).text()).appendTo(bookContainer);
+                            } else if (this.tagName === 'P') {
+                                // Chapter content
+                                var paragraphs = $(this).html().split('\n\n');
+                                paragraphs.forEach(function(paragraph) {
+                                    $('<p>').html(paragraph.trim()).appendTo(bookContainer);
+                                });
+                            }
+                        });
+                        
+                        // Add the structured content to the page
+                        $(".page-content").empty().append(bookContainer);
+                        
+                        $("#progress").text("Book generated! Word count: " + response.word_count);
+                        $("#download-pdf").show();
+    
+                        // Show and set up the edit button
+                        $("#edit-book").show().attr("href", response.edit_url);
+    
+                        $(".book-content").css("font-size", $("#font-size-range").val() + "px");
+    
+                        eventSource.close();
+    
+                        displayAnalytics(response.content);
+    
+                        console.log('Edit URL:', response.edit_url);
+                    },
+                    error: function (xhr, status, error) {
+                        $(".loading").hide();
+                        hideGame(); // Hide the game if there's an error
+                        $("#error-message")
+                            .text("An error occurred while generating the book: " + error)
+                            .show();
+    
+                        eventSource.close();
+                    }
+                });
+            }
+    
+            // Update the CSS for better formatting
+            $(document).ready(function() {
+                $('<style>')
+                    .text(`
+                        .book-content h2 {
+                            font-size: 1.5em;
+                            font-weight: bold;
+                            margin-top: 1.5em;
+                            margin-bottom: 0.5em;
+                        }
+                        .book-content p {
+                            text-indent: 1.5em;
+                            margin-bottom: 0.5em;
+                            line-height: 1.6;
+                        }
+                    `)
+                    .appendTo('head');
+            });
+    
+            // Event listener for the generate book button
+            $("#generate-book").click(function (e) {
+                e.preventDefault();
+                generateBook();
+            });
+    
+            // Modify the download button click event
+            $("#download-pdf").click(function () {
+                if (firebase.auth().currentUser) {
+                    downloadPDF();
+                } else {
+                    alert("Please log in or register to download your book.");
+                    showLoginModal();
+                }
+            });
+    
+            function downloadPDF() {
+                if (!firebase.auth().currentUser) {
+                    alert("Please log in or register to download your book.");
+                    showLoginModal();
+                    return;
+                }
+    
+                var content = $(".book-content").html();  // Get the structured HTML content
+                var title = $("#topic").val();
+                var language = $("#language").val();
+                $(".loading").show();
+                $("#error-message").hide();
+    
+                $.ajax({
+                    url: "/download-pdf",
+                    method: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify({
+                        content: content,
+                        title: title,
+                        language: language,
+                    }),
+                    xhrFields: {
+                        responseType: "blob",
+                    },
+                    success: function (blob) {
+                        $(".loading").hide();
+                        var link = document.createElement("a");
+                        link.href = window.URL.createObjectURL(blob);
+                        link.download = title + ".pdf";
+                        link.click();
+    
+                        // After successful download, save the PDF
+                        savePDF();
+                    },
+                    error: function (xhr, status, error) {
+                        $(".loading").hide();
+                        var errorMessage = "An error occurred while generating the PDF.";
+                        if (xhr.responseJSON && xhr.responseJSON.error) {
+                            errorMessage += " Details: " + xhr.responseJSON.error;
+                        }
+                        $("#error-message").text(errorMessage).show();
+                    },
+                });
+            }
+    
+            function showLoginModal() {
+                // Create a modal dialog
+                const modal = $("<div>").addClass("modal").css({
+                    position: "fixed",
+                    "z-index": 1000,
+                    left: 0,
+                    top: 0,
+                    width: "100%",
+                    height: "100%",
+                    overflow: "auto",
+                    "background-color": "rgba(0,0,0,0.4)",
+                    display: "flex",
+                    "align-items": "center",
+                    "justify-content": "center",
+                });
+    
+                // Create the modal content
+                const modalContent = $("<div>").addClass("modal-content").css({
+                    "background-color": "#ffffff",
+                    padding: "30px",
+                    "border-radius": "8px",
+                    "box-shadow": "0 4px 6px rgba(0, 0, 0, 0.1)",
+                    width: "90%",
+                    "max-width": "400px",
+                });
+    
+                // Create tab buttons
+                const tabButtons = $("<div>").css({
+                    display: "flex",
+                    "margin-bottom": "20px",
+                    "border-bottom": "2px solid #e5e7eb",
+                });
+                const createTabButton = (text) => {
+                    return $("<button>").text(text).css({
+                        "background-color": "transparent",
+                        border: "none",
+                        padding: "10px 20px",
+                        "font-size": "16px",
+                        cursor: "pointer",
+                        outline: "none",
+                        transition: "all 0.3s",
+                    });
+                };
+                const loginTabButton = createTabButton("Login");
+                const signupTabButton = createTabButton("Sign Up");
+                tabButtons.append(loginTabButton, signupTabButton);
+    
+                // Create input style
+                const inputStyle = {
+                    width: "100%",
+                    padding: "10px",
+                    margin: "10px 0",
+                    border: "1px solid #d1d5db",
+                    "border-radius": "4px",
+                    "font-size": "14px",
+                };
+    
+                // Create button style
+                const buttonStyle = {
+                    width: "100%",
+                    padding: "10px",
+                    margin: "20px 0 10px",
+                    "background-color": "#4f46e5", // Indigo
+                    color: "white",
+                    border: "none",
+                    "border-radius": "4px",
+                    "font-size": "16px",
+                    cursor: "pointer",
+                    transition: "background-color 0.3s",
+                };
+    
+                // Create login form
+                const loginForm = $("<form>")
+                    .append(
+                        $("<input>")
+                            .attr({ type: "email", placeholder: "Email", required: true })
+                            .css(inputStyle),
+                        $("<input>")
+                            .attr({
+                                type: "password",
+                                placeholder: "Password",
+                                required: true,
+                            })
+                            .css(inputStyle),
+                        $("<button>").text("Login").css(buttonStyle)
+                    )
+                    .hide();
+    
+                // Create signup form
+                const signupForm = $("<form>")
+                    .append(
+                        $("<input>")
+                            .attr({ type: "email", placeholder: "Email", required: true })
+                            .css(inputStyle),
+                        $("<input>")
+                            .attr({
+                                type: "password",
+                                placeholder: "Password",
+                                required: true,
+                            })
+                            .css(inputStyle),
+                        $("<input>")
+                            .attr({
+                                type: "password",
+                                placeholder: "Confirm Password",
+                                required: true,
+                            })
+                            .css(inputStyle),
+                        $("<button>").text("Sign Up").css(buttonStyle)
+                    )
+                    .hide();
+    
+                // Add tab functionality
+                const setActiveTab = (
+                    activeButton,
+                    inactiveButton,
+                    activeForm,
+                    inactiveForm
+                ) => {
+                    activeButton.css({
+                        "border-bottom": "2px solid #4f46e5",
+                        color: "#4f46e5",
+                    });
+                    inactiveButton.css({
+                        "border-bottom": "none",
+                        color: "#6b7280",
+                    });
+                    activeForm.show();
+                    inactiveForm.hide();
+                };
+    
+                loginTabButton.click(() =>
+                    setActiveTab(loginTabButton, signupTabButton, loginForm, signupForm)
+                );
+                signupTabButton.click(() =>
+                    setActiveTab(signupTabButton, loginTabButton, signupForm, loginForm)
+                );
+    
+                // Show login form by default
+                loginTabButton.click();
+    
+                // Add close button
+                const closeBtn = $("<span>").html("&times;").css({
+                    color: "#9ca3af",
+                    float: "right",
+                    "font-size": "22px",
+                    "font-weight": "bold",
+                    cursor: "pointer",
+                    "line-height": "1",
+                });
+                closeBtn.click(() => modal.remove());
+    
+                // Assemble modal content
+                modalContent.append(closeBtn, tabButtons, loginForm, signupForm);
+                modal.append(modalContent);
+                $("body").append(modal);
+    
+                // Login form submission
+                loginForm.submit(function (e) {
+                    e.preventDefault();
+                    const email = loginForm.find('input[type="email"]').val();
+                    const password = loginForm.find('input[type="password"]').val();
+    
+                    firebase
+                        .auth()
+                        .signInWithEmailAndPassword(email, password)
+                        .then((userCredential) => {
+                            return userCredential.user.getIdToken();
+                        })
+                        .then((idToken) => {
+                            return $.ajax({
+                                url: "/login",
+                                method: "POST",
+                                contentType: "application/json",
+                                data: JSON.stringify({ idToken: idToken }),
+                            });
+                        })
+                        .then((response) => {
+                            if (response.success) {
+                                alert("Logged in successfully!");
+                                modal.remove();
+                                // Update UI to show logged-in state
+                                updateUIForLoggedInUser();
+                                // Trigger download after successful login
+                                showAdWall("download");
+                            } else {
+                                alert("Login failed.");
+                            }
+                        })
+                        .catch((error) => {
+                            console.error("Error:", error);
+                            alert("Login failed: " + error.message);
+                        });
+                });
+    
+                // Signup form submission
+                signupForm.submit(function (e) {
+                    e.preventDefault();
+                    const email = signupForm.find('input[type="email"]').val();
+                    const password = signupForm
+                        .find('input[type="password"]')
+                        .eq(0)
+                        .val();
+                    const confirmPassword = signupForm
+                        .find('input[type="password"]')
+                        .eq(1)
+                        .val();
+    
+                    if (password !== confirmPassword) {
+                        alert("Passwords do not match.");
+                        return;
+                    }
+    
+                    $.ajax({
+                        url: "/register",
+                        method: "POST",
+                        contentType: "application/json",
+                        data: JSON.stringify({ email: email, password: password }),
+                    })
+                        .then((response) => {
+                            if (response.success) {
+                                alert("Registered successfully! Please log in.");
+                                loginTabButton.click(); // Switch to login tab
+                            } else {
+                                alert("Registration failed.");
+                            }
+                        })
+                        .catch((error) => {
+                            console.error("Error:", error);
+                            alert("Registration failed: " + error.responseJSON.error);
+                        });
+                });
+    
+                // Add hover effects
+                $("button").hover(
+                    function () {
+                        $(this).css("opacity", "0.8");
+                    },
+                    function () {
+                        $(this).css("opacity", "1");
+                    }
+                );
+            }
+    
+            // Check authentication state on page load
+            firebase.auth().onAuthStateChanged((user) => {
+                if (user) {
+                    updateUIForLoggedInUser();
+                } else {
+                    $("#profile-button").html('<i class="fas fa-user"></i>');
+                }
+            });
+            // Text-to-speech functionality
+            let speechSynthesis = window.speechSynthesis;
+            let utterance = new SpeechSynthesisUtterance();
+            let isPlaying = false;
+    
+            function populateVoiceList() {
+                let voices = speechSynthesis.getVoices();
+                let voiceSelect = document.getElementById("voice-select");
+                voiceSelect.innerHTML = "";
+                voices.forEach((voice, i) => {
+                    let option = document.createElement("option");
+                    option.textContent = `${voice.name} (${voice.lang})`;
+                    option.setAttribute("data-lang", voice.lang);
+                    option.setAttribute("data-name", voice.name);
+                    voiceSelect.appendChild(option);
+                });
+            }
+    
+            populateVoiceList();
+            if (speechSynthesis.onvoiceschanged !== undefined) {
+                speechSynthesis.onvoiceschanged = populateVoiceList;
+            }
+    
+            document
+                .getElementById("play-pause")
+                .addEventListener("click", function () {
+                    let text = document.querySelector(".page-content").textContent;
+                    if (!isPlaying) {
+                        utterance.text = text;
+                        let selectedVoice = document
+                            .getElementById("voice-select")
+                            .selectedOptions[0].getAttribute("data-name");
+                        utterance.voice = speechSynthesis
+                            .getVoices()
+                            .find((voice) => voice.name === selectedVoice);
+                        speechSynthesis.speak(utterance);
+                        this.textContent = "Pause";
+                        isPlaying = true;
+                    } else {
+                        speechSynthesis.pause();
+                        this.textContent = "Resume";
+                        isPlaying = false;
+                    }
+                });
+    
+            document
+                .getElementById("voice-select")
+                .addEventListener("change", function () {
+                    if (isPlaying) {
+                        speechSynthesis.cancel();
+                        let text = document.querySelector(".page-content").textContent;
+                        utterance = new SpeechSynthesisUtterance(text);
+                        let selectedVoice =
+                            this.selectedOptions[0].getAttribute("data-name");
+                        utterance.voice = speechSynthesis
+                            .getVoices()
+                            .find((voice) => voice.name === selectedVoice);
+                        speechSynthesis.speak(utterance);
+                    }
+                });
+    
+            utterance.onend = function () {
+                document.getElementById("play-pause").textContent = "Play";
+                isPlaying = false;
+            };
+    
+            function displayAnalytics(content) {
+                const wordCount = content.split(/\s+/).length;
+                $("#word-count").text(wordCount);
+    
+                const sentences = content.split(/[.!?]+/);
+                const averageWordsPerSentence = wordCount / sentences.length;
+                const readabilityScore = Math.round(
+                    206.835 - 1.015 * averageWordsPerSentence
+                );
+                $("#readability-score").text(readabilityScore + " (Flesch-Kincaid)");
+    
+                const genres = [
+                    "Fiction",
+                    "Non-fiction",
+                    "Sci-fi",
+                    "Romance",
+                    "Mystery",
+                ];
+                const randomGenre = genres[Math.floor(Math.random() * genres.length)];
+                $("#genre-classification").text(randomGenre);
+    
+                const sentiments = ["Positive", "Neutral", "Negative"];
+                const randomSentiment =
+                    sentiments[Math.floor(Math.random() * sentiments.length)];
+                $("#sentiment-analysis").text(randomSentiment);
+    
+                $("#analytics-dashboard").removeClass("hidden");
+            }
+    
+            $("#settings-button").click(function () {
+                $("#settings-modal").removeClass("hidden");
+            });
+    
+            $("#close-settings").click(function () {
+                $("#settings-modal").addClass("hidden");
+            });
+    
+            $("#theme-select").change(function () {
+                if ($(this).val() === "dark") {
+                    $("body").addClass("dark-theme");
+                } else {
+                    $("body").removeClass("dark-theme");
+                }
+            });
+    
+            $("#font-size-range").on("input", function () {
+                let fontSize = $(this).val();
+                $(".page-content").css("font-size", fontSize + "px");
+                $("#font-size-value").text(fontSize + "px");
+            });
+    
+            $(".page-content").css("font-size", $("#font-size-range").val() + "px");
+            $("#font-size-value").text($("#font-size-range").val() + "px");
+    
+            $("#analytics-toggle").change(function () {
+                if ($(this).is(":checked")) {
+                    $("#analytics-dashboard").removeClass("hidden");
+                } else {
+                    $("#analytics-dashboard").addClass("hidden");
+                }
+            });
+        });
+        // Add this function to the existing JavaScript code
+        function savePDF() {
+            var content = $(".page-content").html();
+            var title = $("#topic").val();
+            var language = $("#language").val();
+            $(".loading").show();
+            $("#error-message").hide();
+    
+            $.ajax({
+                url: "/save-pdf",
+                method: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({
+                    content: content,
+                    title: title,
+                    language: language,
+                }),
+                success: function (response) {
+                    $(".loading").hide();
+                    if (response.success) {
+                        alert("PDF saved successfully!");
+                    } else {
+                        $("#error-message")
+                            .text("Failed to save PDF: " + response.error)
+                            .show();
+                    }
+                },
+                error: function (xhr, status, error) {
+                    $(".loading").hide();
+                    $("#error-message")
+                        .text("An error occurred while saving the PDF: " + error)
+                        .show();
+                },
+            });
+        }
+    
+        // Modify the existing downloadPDF function
+        function downloadPDF() {
+            var content = $(".book-content").html();  // Get the structured HTML content
+            var title = $("#topic").val();
+            var language = $("#language").val();
+            $(".loading").show();
+            $("#error-message").hide();
+    
+            $.ajax({
+                url: "/download-pdf",
+                method: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({
+                    content: content,
+                    title: title,
+                    language: language,
+                }),
+                xhrFields: {
+                    responseType: "blob",
+                },
+                success: function (blob) {
+                    $(".loading").hide();
+                    var link = document.createElement("a");
+                    link.href = window.URL.createObjectURL(blob);
+                    link.download = title + ".pdf";
+                    link.click();
+    
+                    // After successful download, save the PDF
+                    savePDF();
+                },
+                error: function (xhr, status, error) {
+                    $(".loading").hide();
+                    var errorMessage = "An error occurred while generating the PDF.";
+                    if (xhr.responseJSON && xhr.responseJSON.error) {
+                        errorMessage += " Details: " + xhr.responseJSON.error;
+                    }
+                    $("#error-message").text(errorMessage).show();
+                },
+            });
+        }
+    
+        // Function to create a larger book cover
+        // Function to create a larger book cover
+        function createLargerBookCover(title) {
+            const bookCover = document.createElement("div");
+            bookCover.style.width = "120px";
+            bookCover.style.height = "160px";
+            bookCover.style.background = "linear-gradient(45deg, #1a237e, #3949ab)";
+            bookCover.style.borderRadius = "5px";
+            bookCover.style.boxShadow = "0 8px 16px rgba(0,0,0,0.1)";
+            bookCover.style.display = "flex";
+            bookCover.style.flexDirection = "column";
+            bookCover.style.justifyContent = "center";
+            bookCover.style.alignItems = "center";
+            bookCover.style.padding = "10px";
+            bookCover.style.margin = "10px";
+    
+            const titleElement = document.createElement("div");
+            titleElement.textContent = title;
+            titleElement.style.fontFamily = "Arial, sans-serif";
+            titleElement.style.fontSize = "14px";
+            titleElement.style.color = "#ffffff";
+            titleElement.style.textAlign = "center";
+            titleElement.style.wordWrap = "break-word";
+            titleElement.style.maxWidth = "100%";
+    
+            bookCover.appendChild(titleElement);
+            return bookCover;
+        }
+    
+        // Function to create a download icon
+        function createDownloadIcon() {
+            const svgNS = "http://www.w3.org/2000/svg";
+            const svg = document.createElementNS(svgNS, "svg");
+            svg.setAttribute("width", "24");
+            svg.setAttribute("height", "24");
+            svg.setAttribute("viewBox", "0 0 24 24");
+            svg.setAttribute("fill", "none");
+            svg.setAttribute("stroke", "currentColor");
+            svg.setAttribute("stroke-width", "2");
+            svg.setAttribute("stroke-linecap", "round");
+            svg.setAttribute("stroke-linejoin", "round");
+    
+            const path = document.createElementNS(svgNS, "path");
+            path.setAttribute("d", "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4");
+            svg.appendChild(path);
+    
+            const polyline = document.createElementNS(svgNS, "polyline");
+            polyline.setAttribute("points", "7 10 12 15 17 10");
+            svg.appendChild(polyline);
+    
+            const line = document.createElementNS(svgNS, "line");
+            line.setAttribute("x1", "12");
+            line.setAttribute("y1", "15");
+            line.setAttribute("x2", "12");
+            line.setAttribute("y2", "3");
+            svg.appendChild(line);
+    
+            return svg;
+        }
+    
+        // Function to show PDF in modal
+        function showPDFModal(pdfUrl, title) {
+            const modal = document.createElement("div");
+            modal.style.position = "fixed";
+            modal.style.zIndex = "1000";
+            modal.style.left = "0";
+            modal.style.top = "0";
+            modal.style.width = "100%";
+            modal.style.height = "100%";
+            modal.style.backgroundColor = "rgba(0,0,0,0.4)";
+            modal.style.display = "flex";
+            modal.style.justifyContent = "center";
+            modal.style.alignItems = "center";
+    
+            const modalContent = document.createElement("div");
+            modalContent.style.backgroundColor = "#fefefe";
+            modalContent.style.padding = "20px";
+            modalContent.style.border = "1px solid #888";
+            modalContent.style.width = "80%";
+            modalContent.style.height = "80%";
+            modalContent.style.display = "flex";
+            modalContent.style.flexDirection = "column";
+    
+            const closeBtn = document.createElement("span");
+            closeBtn.innerHTML = "&times;";
+            closeBtn.style.color = "#aaa";
+            closeBtn.style.float = "right";
+            closeBtn.style.fontSize = "28px";
+            closeBtn.style.fontWeight = "bold";
+            closeBtn.style.cursor = "pointer";
+            closeBtn.onclick = function () {
+                document.body.removeChild(modal);
+            };
+    
+            const iframe = document.createElement("iframe");
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            iframe.style.border = "none";
+    
+            fetch(pdfUrl)
+                .then((response) => response.blob())
+                .then((blob) => {
+                    const objectUrl = URL.createObjectURL(blob);
+                    iframe.src = objectUrl;
+                })
+                .catch((error) => {
+                    console.error("Error loading PDF:", error);
+                    iframe.srcdoc = "<p>Error loading PDF. Please try again later.</p>";
+                });
+    
+            modalContent.appendChild(closeBtn);
+            modalContent.appendChild(iframe);
+            modal.appendChild(modalContent);
+            document.body.appendChild(modal);
+        }
+    
+        // Function to create a "Go Back" button
+        function createGoBackButton() {
+          const button = document.createElement("button");
+          button.textContent = "← Go Back";
+          button.style.position = "fixed";
+          button.style.top = "20px";
+          button.style.left = "20px";
+          button.style.padding = "10px 15px";
+          button.style.backgroundColor = "indigo";
+          button.style.color = "white";
+          button.style.border = "none";
+          button.style.borderRadius = "5px";
+          button.style.cursor = "pointer";
+          button.style.zIndex = "1001";
+          button.onclick = function () {
+            $(".page-content").empty();
+            document.body.removeChild(button);
+            $("#original-content").show();
+          };
+          return button;
+        }
+    
+        // Add a new button for viewing saved PDFs
+        $(
+          '<button id="view-saved-pdfs" class="fixed top-10 right-10 bg-gradient-to-r from-[#726bff] to-[#57b6fe]	 text-white px-5 py-3 rounded-full shadow-lg hover:bg-gradient-to-r from-[#726bff] to-[#57b6fe]	-600 transition transform hover:-translate-y-1">View Saved PDFs</button>'
+        ).insertAfter("#download-pdf");
+    
+        $("#view-saved-pdfs").click(function () {
+          $.ajax({
+            url: "/get-saved-pdfs",
+            method: "GET",
+            success: function (response) {
+              $("#original-content").hide();
+    
+              if (response.pdfs && response.pdfs.length > 0) {
+                let pdfGrid =
+                  '<div style="display: flex; flex-wrap: wrap; justify-content: flex-start;">';
+                response.pdfs.forEach((pdf) => {
+                  const bookCover = createLargerBookCover(pdf.title);
+                  const downloadIcon = createDownloadIcon();
+                  const domain = window.location.origin;
+                  const pdfUrl = `${domain}/download-saved-pdf/${pdf.id}`;
+                  pdfGrid += `
+                          <div style="display: flex; flex-direction: column; align-items: center; margin: 10px; width: 140px;">
+                              ${bookCover.outerHTML}
+                              <div style="display: flex; align-items: center; justify-content: center; margin-top: 5px; width: 100%;">
+                                  <button onclick="showPDFModal('${pdfUrl}', '${pdf.title}')" style="margin-right: 5px; padding: 2px 5px; background-color: #4CAF50; color: white; border: none; border-radius: 3px; cursor: pointer;">View</button>
+                                  <a href="${pdfUrl}" download title="Download ${pdf.title}">${downloadIcon.outerHTML}</a>
+                              </div>
+                              <div style="text-align: center; overflow-wrap: break-word; margin-top: 5px;">${pdf.title}</div>
+                          </div>`;
+                });
+                pdfGrid += "</div>";
+                $(".page-content").html("<h2>Your Saved PDFs</h2>" + pdfGrid);
+              } else {
+                $(".page-content").html(
+                  "<h2>Your Saved PDFs</h2><p>No saved PDFs found.</p>"
+                );
+              }
+    
+              document.body.appendChild(createGoBackButton());
+            },
+            error: function (xhr, status, error) {
+              $("#error-message")
+                .text("An error occurred while fetching saved PDFs: " + error)
+                .show();
+            },
+          });
+        });
+        // Dinosaur game
+        // Dinosaur game
+        let canvas,
+          ctx,
+          dinoY,
+          dinoVelocity,
+          gravity,
+          cactusX,
+          gameLoop,
+          score,
+          gameOver;
+    
+        function initGame() {
+          canvas = document.getElementById("gameCanvas");
+          ctx = canvas.getContext("2d");
+    
+          document.addEventListener("keydown", jump);
+          $("#restartGame").click(restartGame);
+    
+          startGame();
+        }
+    
+        function startGame() {
+          dinoY = 100;
+          dinoVelocity = 0;
+          gravity = 0.5;
+          cactusX = canvas.width;
+          score = 0;
+          gameOver = false;
+    
+          $("#restartGame").addClass("hidden");
+    
+          if (gameLoop) {
+            clearInterval(gameLoop);
+          }
+          gameLoop = setInterval(updateGame, 20);
+        }
+    
+        function jump(event) {
+          if (event.code === "Space" && dinoY === 100 && !gameOver) {
+            dinoVelocity = -10;
+          }
+        }
+    
+        function updateGame() {
+          // Clear canvas
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+          if (!gameOver) {
+            // Update dino position
+            dinoVelocity += gravity;
+            dinoY += dinoVelocity;
+            if (dinoY > 100) {
+              dinoY = 100;
+              dinoVelocity = 0;
+            }
+    
+            // Update cactus position
+            cactusX -= 5;
+            if (cactusX < 0) {
+              cactusX = canvas.width;
+              score++;
+            }
+    
+            // Check collision
+            if (50 < cactusX + 20 && 90 > cactusX && dinoY + 40 > 100) {
+              gameOver = true;
+              $("#restartGame").removeClass("hidden");
+            }
+          }
+    
+          // Draw dino
+          ctx.fillStyle = "green";
+          ctx.fillRect(50, dinoY, 40, 40);
+    
+          // Draw cactus
+          ctx.fillStyle = "red";
+          ctx.fillRect(cactusX, 100, 20, 40);
+    
+          // Draw score
+          ctx.fillStyle = "black";
+          ctx.font = "20px Arial";
+          ctx.fillText("Score: " + score, 10, 30);
+    
+          // Draw game over text
+          if (gameOver) {
+            ctx.fillStyle = "black";
+            ctx.font = "30px Arial";
+            ctx.fillText("Game Over! Score: " + score, 180, 75);
+          }
+        }
+    
+        function restartGame() {
+          startGame();
+        }
+    
+        function showGame() {
+          $("#game-container").removeClass("hidden");
+          initGame();
+        }
+    
+        function hideGame() {
+          $("#game-container").addClass("hidden");
+          if (gameLoop) {
+            clearInterval(gameLoop);
+          }
+        }
+        // New settings handlers
+        $("#text-align-select").change(function () {
+          $(".page-content").css("text-align", $(this).val());
+        });
+    
+        $("#line-spacing-range").on("input", function () {
+          let lineSpacing = $(this).val();
+          $(".page-content").css("line-height", lineSpacing);
+          $("#line-spacing-value").text(lineSpacing);
+        });
+    
+        $("#indent-range").on("input", function () {
+          let indentValue = $(this).val();
+          $(".page-content p").css("text-indent", indentValue + "em");
+          $("#indent-value").text(indentValue + "em");
+        });
+    
+        $("#text-color-picker").change(function () {
+          $(".page-content").css("color", $(this).val());
+        });
+    
+        // Function to apply all settings
+        function applySettings() {
+          // Apply theme
+          if ($("#theme-select").val() === "dark") {
+            $("body").addClass("dark-theme");
+          } else {
+            $("body").removeClass("dark-theme");
+          }
+    
+          // Apply font size
+          let fontSize = $("#font-size-range").val();
+          $(".page-content").css("font-size", fontSize + "px");
+          $("#font-size-value").text(fontSize + "px");
+    
+          // Apply text alignment
+          $(".page-content").css("text-align", $("#text-align-select").val());
+    
+          // Apply line spacing
+          let lineSpacing = $("#line-spacing-range").val();
+          $(".page-content").css("line-height", lineSpacing);
+          $("#line-spacing-value").text(lineSpacing);
+    
+          // Apply paragraph indentation
+          let indentValue = $("#indent-range").val();
+          $(".page-content p").css("text-indent", indentValue + "em");
+          $("#indent-value").text(indentValue + "em");
+    
+          // Apply text color
+          $(".page-content").css("color", $("#text-color-picker").val());
+    
+          // Apply analytics dashboard visibility
+          if ($("#analytics-toggle").is(":checked")) {
+            $("#analytics-dashboard").removeClass("hidden");
+          } else {
+            $("#analytics-dashboard").addClass("hidden");
+          }
+        }
+    
+        // Apply settings when closing the modal
+        $("#close-settings").click(function () {
+          applySettings();
+          $("#settings-modal").addClass("hidden");
+        });
+    
+        // Initial application of settings
+        applySettings();
+        document.addEventListener("DOMContentLoaded", function () {
+          const chatBubble = document.getElementById("floating-chat-bubble");
+          const chatModal = document.getElementById("chat-modal");
+          const closeChatBtn = document.getElementById("close-chat");
+          const chatInput = document.getElementById("chat-input");
+          const sendMessageBtn = document.getElementById("send-message");
+          const chatMessages = document.getElementById("chat-messages");
+    
+          chatBubble.addEventListener("click", function () {
+            chatModal.classList.remove("hidden");
+            chatModal.classList.add("flex");
+            chatBubble.classList.add("hidden");
+          });
+    
+          closeChatBtn.addEventListener("click", function () {
+            chatModal.classList.add("hidden");
+            chatModal.classList.remove("flex");
+            chatBubble.classList.remove("hidden");
+          });
+    
+          sendMessageBtn.addEventListener("click", sendMessage);
+          chatInput.addEventListener("keypress", function (e) {
+            if (e.key === "Enter" && !e.shiftKey) {
+              e.preventDefault();
+              sendMessage();
+            }
+          });
+    
+          function sendMessage() {
+            const message = chatInput.value.trim();
+            if (message) {
+              addMessageToChat("user", message);
+              chatInput.value = "";
+              // Send message to server and get response
+              fetch("/api/chat", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ message: message }),
+              })
+                .then((response) => response.json())
+                .then((data) => {
+                  addMessageToChat("assistant", data.message);
+                })
+                .catch((error) => {
+                  console.error("Error:", error);
+                  addMessageToChat(
+                    "assistant",
+                    "Sorry, there was an error processing your request."
+                  );
+                });
+            }
+          }
+    
+          function addMessageToChat(sender, message) {
+            const messageElement = document.createElement("div");
+            messageElement.classList.add(
+              "mb-4",
+              "p-2",
+              "rounded-lg",
+              "max-w-3/4"
+            );
+            if (sender === "user") {
+              messageElement.classList.add(
+                "bg-blue-100",
+                "text-blue-800",
+                "ml-auto"
+              );
+            } else {
+              messageElement.classList.add("bg-gray-100", "text-gray-800");
+            }
+            messageElement.textContent = message;
+            chatMessages.appendChild(messageElement);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+          }
+        });
+        const firebaseConfig = {
+    apiKey: "AIzaSyDhoRvo-jfAyTSHplUglMO0Oixx2l2VZHQ",
+    authDomain: "aioapi-4c80f.firebaseapp.com",
+    projectId: "aioapi-4c80f",
+    storageBucket: "aioapi-4c80f.appspot.com",
+    messagingSenderId: "639782628054",
+    appId: "1:639782628054:web:43c0360ffc5c509eed7777",
+    measurementId: "G-36PJQXSFWH",
+    };
+    firebase.initializeApp(firebaseConfig);
+    
+    function createAuthModal() {
+    const modal = $("<div>").addClass("modal").css({
+      position: "fixed",
+      "z-index": 1000,
+      left: 0,
+      top: 0,
+      width: "100%",
+      height: "100%",
+      overflow: "auto",
+      "background-color": "rgba(0,0,0,0.4)",
+      display: "flex",
+      "align-items": "center",
+      "justify-content": "center",
+    });
+    
+    const modalContent = $("<div>").addClass("modal-content").css({
+      "background-color": "#ffffff",
+      padding: "30px",
+      "border-radius": "8px",
+      "box-shadow": "0 4px 6px rgba(0, 0, 0, 0.1)",
+      width: "90%",
+      "max-width": "400px",
+    });
+    
+    const tabButtons = $("<div>").css({
+      display: "flex",
+      "margin-bottom": "20px",
+      "border-bottom": "2px solid #e5e7eb",
+    });
+    const createTabButton = (text) => {
+      return $("<button>").text(text).css({
+        "background-color": "transparent",
+        border: "none",
+        padding: "10px 20px",
+        "font-size": "16px",
+        cursor: "pointer",
+        outline: "none",
+        transition: "all 0.3s",
+      });
+    };
+    const loginTabButton = createTabButton("Login");
+    const signupTabButton = createTabButton("Sign Up");
+    tabButtons.append(loginTabButton, signupTabButton);
+    
+    const inputStyle = {
+      width: "100%",
+      padding: "10px",
+      margin: "10px 0",
+      border: "1px solid #d1d5db",
+      "border-radius": "4px",
+      "font-size": "14px",
+    };
+    
+    const buttonStyle = {
+      width: "100%",
+      padding: "10px",
+      margin: "20px 0 10px",
+      "background-color": "#4f46e5",
+      color: "white",
+      border: "none",
+      "border-radius": "4px",
+      "font-size": "16px",
+      cursor: "pointer",
+      transition: "background-color 0.3s",
+    };
+    
+    const loginForm = $("<form>")
+      .append(
+        $("<input>")
+          .attr({ type: "email", placeholder: "Email", required: true })
+          .css(inputStyle),
+        $("<input>")
+          .attr({
+            type: "password",
+            placeholder: "Password",
+            required: true,
+          })
+          .css(inputStyle),
+        $("<button>").text("Login").css(buttonStyle)
+      )
+      .hide();
+    
+    const signupForm = $("<form>")
+      .append(
+        $("<input>")
+          .attr({ type: "email", placeholder: "Email", required: true })
+          .css(inputStyle),
+        $("<input>")
+          .attr({ type: "tel", placeholder: "Phone Number", required: true })
+          .css(inputStyle),
+        $("<input>")
+          .attr({
+            type: "password",
+            placeholder: "Password",
+            required: true,
+          })
+          .css(inputStyle),
+        $("<input>")
+          .attr({
+            type: "password",
+            placeholder: "Confirm Password",
+            required: true,
+          })
+          .css(inputStyle),
+        $("<button>").text("Sign Up").css(buttonStyle)
+      )
+      .hide();
+    
+    const setActiveTab = (
+      activeButton,
+      inactiveButton,
+      activeForm,
+      inactiveForm
+    ) => {
+      activeButton.css({
+        "border-bottom": "2px solid #4f46e5",
+        color: "#4f46e5",
+      });
+      inactiveButton.css({
+        "border-bottom": "none",
+        color: "#6b7280",
+      });
+      activeForm.show();
+      inactiveForm.hide();
+    };
+    
+    loginTabButton.click(() =>
+      setActiveTab(loginTabButton, signupTabButton, loginForm, signupForm)
+    );
+    signupTabButton.click(() =>
+      setActiveTab(signupTabButton, loginTabButton, signupForm, loginForm)
+    );
+    
+    loginTabButton.click();
+    
+    const closeBtn = $("<span>").html("&times;").css({
+      color: "#9ca3af",
+      float: "right",
+      "font-size": "0px",
+      "font-weight": "bold",
+      cursor: "pointer",
+      "line-height": "1",
+    });
+    closeBtn.click(() => modal.remove());
+    
+    const alertBox = $("<div>").css({
+      padding: "10px",
+      margin: "10px 0",
+      "border-radius": "4px",
+      display: "none",
+    });
+    
+    const showAlert = (message, isError = false) => {
+      alertBox.text(message).css({
+        "background-color": isError ? "#fee2e2" : "#d1fae5",
+        color: isError ? "#991b1b" : "#065f46",
+        display: "block",
+      });
+      setTimeout(() => alertBox.hide(), 5000);
+    };
+    
+    modalContent.append(closeBtn, tabButtons, alertBox, loginForm, signupForm);
+    modal.append(modalContent);
+    
+    const loader = $("<div>").addClass("loader").css({
+      display: "none",
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
+      width: "50px",
+      height: "50px",
+      border: "5px solid #f3f3f3",
+      borderTop: "5px solid #3498db",
+      borderRadius: "50%",
+      animation: "spin 1s linear infinite",
+    });
+    
+    $("<style>")
+      .prop("type", "text/css")
+      .html(`
+        @keyframes spin {
+          0% { transform: translate(-50%, -50%) rotate(0deg); }
+          100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+      `)
+      .appendTo("head");
+    
+    modalContent.append(loader);
+    
+    const showLoader = () => {
+      loader.show();
+      loginForm.find("button").prop("disabled", true);
+      signupForm.find("button").prop("disabled", true);
+    };
+    
+    const hideLoader = () => {
+      loader.hide();
+      loginForm.find("button").prop("disabled", false);
+      signupForm.find("button").prop("disabled", false);
+    };
+    
+    loginForm.submit(function (e) {
+      e.preventDefault();
+      const email = loginForm.find('input[type="email"]').val();
+      const password = loginForm.find('input[type="password"]').val();
+    
+      showLoader();
+    
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          if (user.emailVerified) {
+            return user.getIdToken();
+          } else {
+            throw new Error("Please verify your email before logging in.");
+          }
+        })
+        .then((idToken) => {
+          return $.ajax({
+            url: "/login",
+            method: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({ idToken: idToken }),
+          });
+        })
+        .then((response) => {
+          hideLoader();
+          if (response.success) {
+            showAlert("Logged in successfully!");
+            setTimeout(() => {
+              modal.remove();
+              updateUIForLoggedInUser();
+            }, 1500);
+          } else {
+            showAlert("Login failed.", true);
+          }
+        })
+        .catch((error) => {
+          hideLoader();
+          console.error("Error:", error);
+          showAlert("Login failed: " + error.message, true);
+        });
+    });
+    
+    signupForm.submit(function (e) {
+      e.preventDefault();
+      const email = signupForm.find('input[type="email"]').val();
+      const phoneNumber = signupForm.find('input[type="tel"]').val();
+      const password = signupForm.find('input[type="password"]').eq(0).val();
+      const confirmPassword = signupForm.find('input[type="password"]').eq(1).val();
+    
+      if (password !== confirmPassword) {
+        showAlert("Passwords do not match.", true);
+        return;
+      }
+    
+      showLoader();
+    
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          return user.updateProfile({
+            phoneNumber: phoneNumber
+          }).then(() => user.sendEmailVerification());
+        })
+        .then(() => {
+          hideLoader();
+          showAlert("Registration successful! Please check your email to verify your account.");
+          setTimeout(() => loginTabButton.click(), 1500);
+        })
+        .catch((error) => {
+          hideLoader();
+          console.error("Error:", error);
+          showAlert("Registration failed: " + error.message, true);
+        });
+    });
+    
+    
+    $("button").hover(
+      function () {
+        $(this).css("opacity", "0.8");
+      },
+      function () {
+        $(this).css("opacity", "1");
+      }
+    );
+    
+    return modal;
+    }
+    
+    function getRandomColor() {
+    const letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+    }
+    
+    function updateUIForLoggedInUser() {
+    const avatar = $("<div>")
+      .css({
+        width: "40px",
+        height: "40px",
+        "border-radius": "50%",
+        "background-color": getRandomColor(),
+        display: "flex",
+        "align-items": "center",
+        "justify-content": "center",
+        color: "#fff",
+        "font-size": "18px",
+        "font-weight": "bold",
+        cursor: "pointer",
+      })
+      .text("P");
+    
+    $("#profile-button")
+      .html(avatar)
+      .off("click")
+      .click(function () {
+        const profileModal = $("<div>").addClass("modal").css({
+          position: "fixed",
+          "z-index": 1000,
+          left: 0,
+          top: 0,
+          width: "100%",
+          height: "100%",
+          overflow: "auto",
+          "background-color": "rgba(0,0,0,0.4)",
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+        });
+    
+        const profileContent = $("<div>").addClass("modal-content").css({
+          "background-color": "#ffffff",
+          padding: "30px",
+          "border-radius": "8px",
+          "box-shadow": "0 4px 6px rgba(0, 0, 0, 0.1)",
+          width: "90%",
+          "max-width": "400px",
+        });
+    
+        const user = firebase.auth().currentUser;
+    
+        const userDetails = $("<div>").css({
+          "margin-bottom": "20px",
+        });
+    
+        const detailStyle = {
+          "margin-bottom": "10px",
+          "font-size": "14px",
+        };
+    
+        userDetails.append(
+          $("<p>").text(`Email: ${user.email}`).css(detailStyle),
+          $("<p>").text(`UID: ${user.uid}`).css(detailStyle),
+          $("<p>").text(`Email Verified: ${user.emailVerified}`).css(detailStyle),
+          $("<p>").text(`Account Created: ${user.metadata.creationTime}`).css(detailStyle),
+          $("<p>").text(`Last Sign In: ${user.metadata.lastSignInTime}`).css(detailStyle)
+        );
+    
+        const buttonStyle = {
+          width: "100%",
+          padding: "10px",
+          margin: "10px 0",
+          color: "white",
+          border: "none",
+          "border-radius": "4px",
+          "font-size": "16px",
+          cursor: "pointer",
+          transition: "background-color 0.3s",
+        };
+    
+        const changePasswordButton = $("<button>").text("Change Password").css({
+          ...buttonStyle,
+          "background-color": "#3b82f6",
+        });
+    
+        const logoutButton = $("<button>").text("Logout").css({
+          ...buttonStyle,
+          "background-color": "#ef4444",
+        });
+    
+        const alertBox = $("<div>").css({
+          padding: "10px",
+          margin: "10px 0",
+          "border-radius": "4px",
+          display: "none",
+        });
+    
+        const showAlert = (message, isError = false) => {
+          alertBox.text(message).css({
+            "background-color": isError ? "#fee2e2" : "#d1fae5",
+            color: isError ? "#991b1b" : "#065f46",
+            display: "block",
+          });
+          setTimeout(() => alertBox.hide(), 5000);
+        };
+    
+        changePasswordButton.click(function () {
+          const newPassword = prompt("Enter your new password:");
+          if (newPassword) {
+            user.updatePassword(newPassword)
+              .then(() => {
+                showAlert("Password updated successfully!");
+              })
+              .catch((error) => {
+                console.error("Password change error:", error);
+                showAlert("Password change failed: " + error.message, true);
+              });
+          }
+        });
+    
+        logoutButton.click(function () {
+          firebase
+            .auth()
+            .signOut()
+            .then(() => {
+              showAlert("Logged out successfully!");
+              setTimeout(() => {
+                profileModal.remove();
+                $("#profile-button").html('<i class="fas fa-user"></i>');
+                location.reload();
+              }, 1500);
+            })
+            .catch((error) => {
+              console.error("Logout error:", error);
+              showAlert("Logout failed: " + error.message, true);
+            });
+        });
+    
+        const closeBtn = $("<span>").html("&times;").css({
+          color: "#9ca3af",
+          float: "right",
+          "font-size": "28px",
+          "font-weight": "bold",
+          cursor: "pointer",
+          "line-height": "1",
+        });
+        closeBtn.click(() => profileModal.remove());
+    
+        if (!user.emailVerified) {
+          const resendVerificationButton = $("<button>").text("Resend Verification Email").css({
+            ...buttonStyle,
+            "background-color": "#10b981",
+          });
+    
+          resendVerificationButton.click(function () {
+            user.sendEmailVerification()
+              .then(() => {
+                showAlert("Verification email sent successfully!");
+              })
+              .catch((error) => {
+                console.error("Email verification error:", error);
+                showAlert("Failed to send verification email: " + error.message, true);
+              });
+          });
+    
+          userDetails.append(resendVerificationButton);
+        }
+    
+        profileContent.append(
+          closeBtn,
+          $("<h2>").text("User Profile").css("margin-bottom", "20px"),
+          userDetails,
+          alertBox,
+          changePasswordButton,
+          logoutButton
+        );
+        profileModal.append(profileContent);
+        $("body").append(profileModal);
+      });
+    }
+    
+    $(document).ready(function() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        updateUIForLoggedInUser();
+      } else {
+        $("#profile-button").html('<i class="fas fa-user"></i>');
+        const authModal = createAuthModal();
+        $("body").append(authModal);
+      }
+    });
+    });
+        // Three.js scene setup
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(
+          75,
+          window.innerWidth / window.innerHeight,
+          0.1,
+          1000
+        );
+        const renderer = new THREE.WebGLRenderer({
+          antialias: true,
+          alpha: true,
+        });
+    
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document
+          .getElementById("three-container")
+          .appendChild(renderer.domElement);
+    
+        // Create floating particles
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 1000;
+        const posArray = new Float32Array(particlesCount * 3);
+    
+        for (let i = 0; i < particlesCount * 3; i++) {
+          posArray[i] = (Math.random() - 0.5) * 5;
+        }
+    
+        particlesGeometry.setAttribute(
+          "position",
+          new THREE.BufferAttribute(posArray, 3)
+        );
+    
+        const particlesMaterial = new THREE.PointsMaterial({
+          size: 0.005,
+          color: 0xffffff,
+          transparent: true,
+          opacity: 0.8,
+        });
+    
+        const particlesMesh = new THREE.Points(
+          particlesGeometry,
+          particlesMaterial
+        );
+        scene.add(particlesMesh);
+    
+        camera.position.z = 3;
+    
+        // Animation loop
+        function animate() {
+          requestAnimationFrame(animate);
+          particlesMesh.rotation.x += 0.0005;
+          particlesMesh.rotation.y += 0.0005;
+          renderer.render(scene, camera);
+        }
+    
+        animate();
+    
+        // Resize handler
+        window.addEventListener("resize", () => {
+          camera.aspect = window.innerWidth / window.innerHeight;
+          camera.updateProjectionMatrix();
+          renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+        function detectGenre(content) {
+        const genreKeywords = {
+            "fiction": ["characters", "plot", "setting", "narrative", "protagonist", "antagonist"],
+            "non-fiction": ["facts", "research", "analysis", "information", "data", "evidence"],
+            "sci-fi": ["future", "technology", "space", "alien", "robot", "dystopian"],
+            "fantasy": ["magic", "mythical", "quest", "dragon", "wizard", "enchanted"],
+            "mystery": ["detective", "clue", "suspect", "investigation", "crime", "solve"],
+            "romance": ["love", "relationship", "passion", "heartbreak", "attraction", "couple"],
+            "thriller": ["suspense", "danger", "tension", "action", "threat", "conspiracy"],
+            "horror": ["fear", "terror", "supernatural", "monster", "nightmare", "dread"],
+            "historical": ["era", "period", "century", "historical figure", "event", "timeline"],
+            "biography": ["life", "person", "achievement", "childhood", "career", "legacy"]
+        };
+    
+        const genreCounts = {};
+        const contentLower = content.toLowerCase();
+    
+        for (const [genre, keywords] of Object.entries(genreKeywords)) {
+            genreCounts[genre] = keywords.reduce((count, keyword) => {
+                return count + (contentLower.match(new RegExp(keyword, 'g')) || []).length;
+            }, 0);
+        }
+    
+        const detectedGenre = Object.entries(genreCounts).reduce((a, b) => a[1] > b[1] ? a : b)[0];
+        const selectedGenre = $("#genre").val();
+    
+        if (detectedGenre === selectedGenre) {
+            return `${detectedGenre} (Confirmed)`;
+        } else {
+            return `${selectedGenre} (Selected) / ${detectedGenre} (Detected)`;
+        }
+    }
+    // Function to copy generated text
+    function copyGeneratedText() {
+        const generatedText = $(".page-content").text();
+        if (generatedText) {
+            navigator.clipboard.writeText(generatedText).then(() => {
+                // Change button text temporarily to indicate success
+                $("#copy-text").text("Copied!");
+                setTimeout(() => {
+                    $("#copy-text").text("Copy Text");
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+                alert("Failed to copy text. Please try again.");
+            });
+        } else {
+            alert("No text to copy. Please generate a book first.");
+        }
+    }
+    
+    // Event listener for copy button
+    $("#copy-text").click(copyGeneratedText);
+    
+    // Show copy button after book generation
+    function showCopyButton() {
+        $("#copy-text").removeClass("hidden");
+    }
+      </script>
+      <div class="razorpay-container" style="z-index: 2147483647; position: fixed; top: 0px; display: none; left: 0px; height: 100%; width: 100%; max-height: 100dvh; backface-visibility: hidden; overflow-y: visible;"><style>@keyframes rzp-rot{to{transform: rotate(360deg);}}@-webkit-keyframes rzp-rot{to{-webkit-transform: rotate(360deg);}} .razorpay-container > iframe {min-height: 100%!important;}</style><div class="razorpay-backdrop" style="min-height: 100%; transition: 0.3s ease-out; position: fixed; top: 0px; left: 0px; width: 100%; height: 100%;"><span style="text-decoration: none; background: rgb(214, 68, 68); border: 1px dashed white; padding: 3px; opacity: 0; transform: rotate(45deg); transition: opacity 0.3s ease-in; font-family: lato, ubuntu, helvetica, sans-serif; color: white; position: absolute; width: 200px; text-align: center; right: -50px; top: 50px;">Test Mode</span></div><iframe style="opacity: 1; height: 100%; position: relative; background: none; display: block; border: 0 none transparent; margin: 0px; padding: 0px; z-index: 2;" allowtransparency="true" frameborder="0" width="100%" height="100%" src="https://api.razorpay.com/v1/checkout/public?traffic_env=production&amp;build=4741eb379f6ca08e087dcaf66fad54bee9250d04&amp;checkout_v2=1&amp;new_session=1" class="razorpay-checkout-frame" allow="otp-credentials; payment; clipboard-write; camera *"></iframe></div><script>
+    
+        // Three.js scene setup
+        const Scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(
+          75,
+          window.innerWidth / window.innerHeight,
+          0.1,
+          1000
+        );
+        const Renderer = new THREE.WebGLRenderer({
+          antialias: true,
+          alpha: true,
+        });
+    
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document
+          .getElementById("three-container")
+          .appendChild(Renderer.domElement);
+    
+        // Create floating particles
+        const ParticlesGeometry = new THREE.BufferGeometry();
+        const ParticlesCount = 1000;
+        const PosArray = new Float32Array(ParticlesCount * 3);
+    
+        for (let i = 0; i < ParticlesCount * 3; i++) {
+          PosArray[i] = (Math.random() - 0.5) * 5;
+        }
+    
+        ParticlesGeometry.setAttribute(
+          "position",
+          new THREE.BufferAttribute(posArray, 3)
+        );
+    
+        const ParticlesMaterial = new THREE.PointsMaterial({
+          size: 0.005,
+          color: 0xffffff,
+          transparent: true,
+          opacity: 0.8,
+        });
+    
+        const ParticlesMesh = new THREE.Points(
+          ParticlesGeometry,
+          ParticlesMaterial
+        );
+        scene.add(ParticlesMesh);
+    
+        camera.position.z = 3;
+    
+        // Animation loop
+        function animate() {
+          requestAnimationFrame(animate);
+          particlesMesh.rotation.x += 0.0005;
+          particlesMesh.rotation.y += 0.0005;
+          renderer.render(scene, camera);
+        }
+    
+        animate();
+    
+        // Resize handler
+        window.addEventListener("resize", () => {
+          camera.aspect = window.innerWidth / window.innerHeight;
+          camera.updateProjectionMatrix();
+          renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+        function detectGenre(content) {
+        const genreKeywords = {
+            "fiction": ["characters", "plot", "setting", "narrative", "protagonist", "antagonist"],
+            "non-fiction": ["facts", "research", "analysis", "information", "data", "evidence"],
+            "sci-fi": ["future", "technology", "space", "alien", "robot", "dystopian"],
+            "fantasy": ["magic", "mythical", "quest", "dragon", "wizard", "enchanted"],
+            "mystery": ["detective", "clue", "suspect", "investigation", "crime", "solve"],
+            "romance": ["love", "relationship", "passion", "heartbreak", "attraction", "couple"],
+            "thriller": ["suspense", "danger", "tension", "action", "threat", "conspiracy"],
+            "horror": ["fear", "terror", "supernatural", "monster", "nightmare", "dread"],
+            "historical": ["era", "period", "century", "historical figure", "event", "timeline"],
+            "biography": ["life", "person", "achievement", "childhood", "career", "legacy"]
+        };
+    
+        const genreCounts = {};
+        const contentLower = content.toLowerCase();
+    
+        for (const [genre, keywords] of Object.entries(genreKeywords)) {
+            genreCounts[genre] = keywords.reduce((count, keyword) => {
+                return count + (contentLower.match(new RegExp(keyword, 'g')) || []).length;
+            }, 0);
+        }
+    
+        const detectedGenre = Object.entries(genreCounts).reduce((a, b) => a[1] > b[1] ? a : b)[0];
+        const selectedGenre = $("#genre").val();
+    
+        if (detectedGenre === selectedGenre) {
+            return `${detectedGenre} (Confirmed)`;
+        } else {
+            return `${selectedGenre} (Selected) / ${detectedGenre} (Detected)`;
+        }
+    }
+    // Function to copy generated text
+    function copyGeneratedText() {
+        const generatedText = $(".page-content").text();
+        if (generatedText) {
+            navigator.clipboard.writeText(generatedText).then(() => {
+                // Change button text temporarily to indicate success
+                $("#copy-text").text("Copied!");
+                setTimeout(() => {
+                    $("#copy-text").text("Copy Text");
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+                alert("Failed to copy text. Please try again.");
+            });
+        } else {
+            alert("No text to copy. Please generate a book first.");
+        }
+    }
+    
+    // Event listener for copy button
+    $("#copy-text").click(copyGeneratedText);
+    
+    // Show copy button after book generation
+    function showCopyButton() {
+        $("#copy-text").removeClass("hidden");
+    }
+    </script>
+   </body> 
+   </html>
+     
